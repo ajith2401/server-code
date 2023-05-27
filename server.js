@@ -4,9 +4,8 @@ const path = require('path');
 const app = express();
 
 app.use(express.json());
-
-const commentsFilePath = path.join(process.cwd(), 'comments.json');
-
+// Update the comments file path to a temporary location
+const commentsFilePath = path.join(__dirname, 'tmp', 'comments.json');
 app.post('/api/comments', (req, res) => {
   const { name, mail_id, content, date, writingId, writingTitle } = req.body;
   const newComment = {
