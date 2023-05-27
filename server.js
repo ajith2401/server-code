@@ -1,11 +1,11 @@
 const fs = require('fs');
 const express = require('express');
 const path = require('path');
-
 const app = express();
+
 app.use(express.json());
 
-const commentsFilePath = path.join(__dirname, 'comments.json');
+const commentsFilePath = path.join(process.cwd(), 'comments.json');
 
 app.post('/api/comments', (req, res) => {
   const { name, mail_id, content, date, writingId, writingTitle } = req.body;
@@ -42,20 +42,6 @@ app.post('/api/comments', (req, res) => {
     res.status(500).json({ message: 'Error writing comments file' });
     return;
   }
-});
-
-// Endpoint to handle '/ajith'
-app.get('/ajith', (req, res) => {
-  res.send('hello ajith');
-});
-
-// Serve the static files
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Start the server
-const port = 3000; // or any other port you prefer
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
 });
 
 module.exports = app;
