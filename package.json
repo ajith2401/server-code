@@ -1,0 +1,24 @@
+{
+  "name": "server-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajith2401/server-code.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajith2401/server-code/issues"
+  },
+  "homepage": "https://github.com/ajith2401/server-code#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security"
+  }
+}

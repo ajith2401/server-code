@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment App</title>
+</head>
+<body>
+  <h1>Comment App</h1>
+
+  <!-- Add a button to trigger the request to the '/ajith' endpoint -->
+  <button id="ajithButton">Say Hello to Ajith</button>
+
+  <script>
+    // Add an event listener to the button
+    const ajithButton = document.getElementById('ajithButton');
+    ajithButton.addEventListener('click', () => {
+      // Make a request to the '/ajith' endpoint
+      fetch('/ajith')
+        .then(response => response.text())
+        .then(data => console.log(data)) // You can do something with the response here
+        .catch(error => console.error(error));
+    });
+  </script>
+  <script src="server.js"></script>
+</body>
+</html>
