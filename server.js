@@ -40,6 +40,7 @@ app.post('/api/comments', (req, res) => {
   } catch (err) {
     console.error('Error writing comments file:', err);
     res.status(500).json({ message: 'Error writing comments file' });
+    return;
   }
 });
 
